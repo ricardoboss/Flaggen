@@ -25,15 +25,15 @@
   <!-- NuGet package properties -->
   <PropertyGroup>
     <PackageId>Flaggen</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <Authors>Ricardo Boss</Authors>
     <Copyright>Copyright © 2025 Ricardo Boss</Copyright>
     <PackageTags>Roslyn</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/ricardoboss/Baugen</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/ricardoboss/Flaggen</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
 
-    <RepositoryUrl>https://github.com/ricardoboss/Baugen.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/ricardoboss/Flaggen.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
 
