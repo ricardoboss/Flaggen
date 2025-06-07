@@ -62,22 +62,22 @@ public class FlaggenGenerator : IIncrementalGenerator
                                      {
                                          public static class {{enumName}}FlaggenExtensions
                                          {
-                                             public static {{enumName}} Add(this {{enumName}} value, {{enumName}} flag)
+                                             public static void Add(ref this {{enumName}} value, {{enumName}} flag)
                                              {
-                                                 return value | flag;
+                                                 value |= flag;
                                              }
                                      
-                                             public static {{enumName}} Remove(this {{enumName}} value, {{enumName}} flag)
+                                             public static void Remove(ref this {{enumName}} value, {{enumName}} flag)
                                              {
-                                                 return value & ~flag;
+                                                 value &= ~flag;
                                              }
                                      
-                                             public static {{enumName}} Toggle(this {{enumName}} value, {{enumName}} flag)
+                                             public static void Toggle(ref this {{enumName}} value, {{enumName}} flag)
                                              {
-                                                 return value ^ flag;
+                                                 value ^= flag;
                                              }
                                      
-                                             public static bool Has(this {{enumName}} value, {{enumName}} flag)
+                                             public static bool Has(ref this {{enumName}} value, {{enumName}} flag)
                                              {
                                                  return (value & flag) == flag;
                                              }

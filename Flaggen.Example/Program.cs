@@ -2,10 +2,10 @@
 
 var value = TestEnum.Foo | TestEnum.Bar;
 
-value = value.Toggle(TestEnum.Foo);
-value = value.Toggle(TestEnum.Qux);
-value = value.Add(TestEnum.Baz);
-value = value.Remove(TestEnum.Foo);
+value.Toggle(TestEnum.Foo);
+value.Toggle(TestEnum.Qux);
+value.Add(TestEnum.Baz);
+value.Remove(TestEnum.Foo);
 
 foreach (var flag in Enum.GetValues<TestEnum>())
 {

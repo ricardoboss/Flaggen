@@ -1,3 +1,7 @@
+# 1.1.0
+
+- Made extension functions non-pure for a cleaner API
+
 # 1.0.1
 
 - Fix source link

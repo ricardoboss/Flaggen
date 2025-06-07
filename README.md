@@ -32,9 +32,9 @@ for this enum:
 var myColors = LovelyColors.RoseGold | LovelyColors.SeaGreen;
 
 // manipulate the flags
-myColors = myColors.Add(LovelyColors.BrightRed);
-myColors = myColors.Remove(LovelyColors.RoseGold);
-myColors = myColors.Toggle(LovelyColors.SeaGreen);
+myColors.Add(LovelyColors.BrightRed);
+myColors.Remove(LovelyColors.RoseGold);
+myColors.Toggle(LovelyColors.SeaGreen);
 
 // check for flags
 if (myColors.Has(LovelyColors.SunshineYellow))
