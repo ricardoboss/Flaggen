@@ -60,23 +60,46 @@ public class FlaggenGenerator : IIncrementalGenerator
 
                                      namespace {{namespaceName}}
                                      {
+                                         /// <summary>
+                                         /// Extension methods for <see cref="{{enumName}}"/>.
+                                         /// </summary>
                                          public static class {{enumName}}FlaggenExtensions
                                          {
+                                             /// <summary>
+                                             /// Adds <paramref name="flag"/> to <paramref name="value"/>.
+                                             /// </summary>
+                                             /// <param name="value">The value to add the flag to</param>
+                                             /// <param name="flag">The flag to add to the value</param>
                                              public static void Add(ref this {{enumName}} value, {{enumName}} flag)
                                              {
                                                  value |= flag;
                                              }
                                      
+                                             /// <summary>
+                                             /// Removes <paramref name="flag"/> from <paramref name="value"/>.
+                                             /// </summary>
+                                             /// <param name="value">The value to remove the flag from</param>
+                                             /// <param name="flag">The flag to remove from the value</param>
                                              public static void Remove(ref this {{enumName}} value, {{enumName}} flag)
                                              {
                                                  value &= ~flag;
                                              }
                                      
+                                             /// <summary>
+                                             /// Toggles <paramref name="flag"/> on <paramref name="value"/>.
+                                             /// </summary>
+                                             /// <param name="value">The value to toggle the flag on</param>
+                                             /// <param name="flag">The flag to toggle on the value</param>
                                              public static void Toggle(ref this {{enumName}} value, {{enumName}} flag)
                                              {
                                                  value ^= flag;
                                              }
                                      
+                                             /// <summary>
+                                             /// Checks whether <paramref name="value"/> has <paramref name="flag"/> set.
+                                             /// </summary>
+                                             /// <param name="value">The value to check for flag</param>
+                                             /// <param name="flag">The flag to check to the value for</param>
                                              public static bool Has(ref this {{enumName}} value, {{enumName}} flag)
                                              {
                                                  return (value & flag) == flag;

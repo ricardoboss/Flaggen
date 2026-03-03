@@ -1,3 +1,7 @@
+# Unreleased
+
+- Added documentation for extension type and methods.
+
 # 1.1.0
 
 - Made extension functions non-pure for a cleaner API
