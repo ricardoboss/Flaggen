@@ -25,9 +25,9 @@
   <!-- NuGet package properties -->
   <PropertyGroup>
     <PackageId>Flaggen</PackageId>
-    <PackageVersion>1.1.0</PackageVersion>
+    <PackageVersion>1.2.0</PackageVersion>
     <Authors>Ricardo Boss</Authors>
-    <Copyright>Copyright © 2025 Ricardo Boss</Copyright>
+    <Copyright>Copyright © 2025-2026 Ricardo Boss</Copyright>
     <PackageTags>Roslyn</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/ricardoboss/Flaggen</PackageProjectUrl>
