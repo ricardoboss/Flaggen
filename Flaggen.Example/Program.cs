@@ -1,4 +1,4 @@
-﻿using Flaggen;
+﻿using TestNamespace;
 
 var value = TestEnum.Foo | TestEnum.Bar;
 
@@ -13,6 +13,9 @@ foreach (var flag in Enum.GetValues<TestEnum>())
         Console.WriteLine(flag);
 }
 
+var alphabet = TestClass<object>.NestedType<object>.NestedEnum.A;
+alphabet.Add(TestClass<object>.NestedType<object>.NestedEnum.B);
+
 [Flags]
 public enum TestEnum
 {
@@ -20,4 +23,23 @@ public enum TestEnum
     Bar = 1 << 1,
     Baz = 1 << 2,
     Qux = 1 << 3,
+}
+
+namespace TestNamespace
+{
+    public class TestClass<T> where T : class
+    {
+        public TestClass() {}
+
+        public class NestedType<Q> where Q : T, new()
+        {
+            [Flags]
+            public enum NestedEnum
+            {
+                A = 1 << 0,
+                B = 1 << 1,
+                C = 1 << 2,
+            }
+        }
+    }
 }

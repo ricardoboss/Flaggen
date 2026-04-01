@@ -1,3 +1,7 @@
+# Unreleased
+
+- FEAT: added supported for nested types, generic parameters and generic type constraints
+
 # 1.2.0
 
 - Added documentation for extension type and methods.
