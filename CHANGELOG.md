@@ -1,4 +1,4 @@
-# Unreleased
+# 1.3.0
 
 - FEAT: added supported for nested types, generic parameters and generic type constraints
 
