@@ -1,3 +1,7 @@
+# Unreleased
+
+- FEAT: added `Set` method to add/remove a flag based on a bool
+
 # 1.3.0
 
 - FEAT: added supported for nested types, generic parameters and generic type constraints

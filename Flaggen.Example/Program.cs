@@ -5,6 +5,8 @@ var value = TestEnum.Foo | TestEnum.Bar;
 value.Toggle(TestEnum.Foo);
 value.Toggle(TestEnum.Qux);
 value.Add(TestEnum.Baz);
+
+value.Set(TestEnum.Foo, enable: true);
 value.Remove(TestEnum.Foo);
 
 foreach (var flag in Enum.GetValues<TestEnum>())

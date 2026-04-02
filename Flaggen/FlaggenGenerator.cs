@@ -217,6 +217,10 @@ public class FlaggenGenerator : IIncrementalGenerator
 
         writer.WriteLineNoTabs(string.Empty);
 
+        GenerateSetExtension(writer, genericParams, genericConstraints, enumType);
+
+        writer.WriteLineNoTabs(string.Empty);
+
         GenerateHasExtension(writer, genericParams, genericConstraints, enumType);
 
         writer.Indent--;
@@ -268,6 +272,24 @@ public class FlaggenGenerator : IIncrementalGenerator
               public static void Toggle{{genericParams}}(ref this {{enumType}} value, {{enumType}} flag){{genericConstraints}}
               {
                   value ^= flag;
+              }
+              """
+        );
+
+    private static void GenerateSetExtension(IndentedTextWriter writer, string genericParams,
+        string genericConstraints, string enumType) =>
+        WriteCode(
+            writer,
+            $$"""
+              /// <summary>
+              /// Sets <paramref name="flag"/> on <paramref name="value"/> depending on <paramref name="enable"/>.
+              /// </summary>
+              /// <param name="value">The value to set the flag on</param>
+              /// <param name="flag">The flag to set on the value</param>
+              /// <param name="enable">Whether the flag should be enabled</param>
+              public static void Set{{genericParams}}(ref this {{enumType}} value, {{enumType}} flag, bool enable){{genericConstraints}}
+              {
+                  value = enable ? value | flag : value & ~flag;
               }
               """
         );
