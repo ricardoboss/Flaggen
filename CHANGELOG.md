@@ -1,6 +1,7 @@
 # Unreleased
 
 - FEAT: added `Set` method to add/remove a flag based on a bool
+- PERF: use aggressive inlining for simple methods
 
 # 1.3.0
 

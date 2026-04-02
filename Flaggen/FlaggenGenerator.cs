@@ -166,6 +166,9 @@ public class FlaggenGenerator : IIncrementalGenerator
         using var streamWriter = new StreamWriter(stream, encoding: Encoding.UTF8, bufferSize: 1024, leaveOpen: true);
         using var writer = new IndentedTextWriter(streamWriter);
 
+        writer.WriteLine("using System.Runtime.CompilerServices;");
+        writer.WriteLineNoTabs(string.Empty);
+
         if (namespaceName is not null)
         {
             writer.Write("namespace ");
@@ -252,6 +255,7 @@ public class FlaggenGenerator : IIncrementalGenerator
               /// </summary>
               /// <param name="value">The value to check for flag</param>
               /// <param name="flag">The flag to check to the value for</param>
+              [MethodImpl(MethodImplOptions.AggressiveInlining)]
               public static bool Has{{genericParams}}(ref this {{enumType}} value, {{enumType}} flag){{genericConstraints}}
               {
                   return (value & flag) == flag;
@@ -269,6 +273,7 @@ public class FlaggenGenerator : IIncrementalGenerator
               /// </summary>
               /// <param name="value">The value to toggle the flag on</param>
               /// <param name="flag">The flag to toggle on the value</param>
+              [MethodImpl(MethodImplOptions.AggressiveInlining)]
               public static void Toggle{{genericParams}}(ref this {{enumType}} value, {{enumType}} flag){{genericConstraints}}
               {
                   value ^= flag;
@@ -287,6 +292,7 @@ public class FlaggenGenerator : IIncrementalGenerator
               /// <param name="value">The value to set the flag on</param>
               /// <param name="flag">The flag to set on the value</param>
               /// <param name="enable">Whether the flag should be enabled</param>
+              [MethodImpl(MethodImplOptions.AggressiveInlining)]
               public static void Set{{genericParams}}(ref this {{enumType}} value, {{enumType}} flag, bool enable){{genericConstraints}}
               {
                   value = enable ? value | flag : value & ~flag;
@@ -304,6 +310,7 @@ public class FlaggenGenerator : IIncrementalGenerator
               /// </summary>
               /// <param name="value">The value to remove the flag from</param>
               /// <param name="flag">The flag to remove from the value</param>
+              [MethodImpl(MethodImplOptions.AggressiveInlining)]
               public static void Remove{{genericParams}}(ref this {{enumType}} value, {{enumType}} flag){{genericConstraints}}
               {
                   value &= ~flag;
@@ -321,6 +328,7 @@ public class FlaggenGenerator : IIncrementalGenerator
               /// </summary>
               /// <param name="value">The value to add the flag to</param>
               /// <param name="flag">The flag to add to the value</param>
+              [MethodImpl(MethodImplOptions.AggressiveInlining)]
               public static void Add{{genericParams}}(ref this {{enumType}} value, {{enumType}} flag){{genericConstraints}}
               {
                   value |= flag;
